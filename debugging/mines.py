@@ -2,8 +2,10 @@
 import random
 import os
 
+
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
+
 
 class Minesweeper:
     def __init__(self, width=10, height=10, mines=10):
@@ -13,7 +15,7 @@ class Minesweeper:
         self.field = [[' ' for _ in range(width)] for _ in range(height)]
         self.revealed = [[False for _ in range(width)] for _ in range(height)]
         self.revealed_count = 0  # Initialisation du compteur de cases révélées
-        self.total_safe_cells = width * height - len(self.mines)  # Calcul du nombre total de cases sans mines
+        self.total_safe_cells = width * height - len(self.mines)
 
     def print_board(self, reveal=False):
         clear_screen()
@@ -44,7 +46,7 @@ class Minesweeper:
     def reveal(self, x, y):
         if not (0 <= x < self.width and 0 <= y < self.height):
             return True  # Coordonnées invalides, continuer le jeu
-            
+
         if self.revealed[y][x]:
             return True  # Case déjà révélée, continuer le jeu
             
