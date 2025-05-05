@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 import sys
 
-if len(sys.argv) == 1:
-    print("Aucun argument n'a été fourni.")
-else:
-    for i in range(len(sys.argv)):
-        print(sys.argv[i])
+# Commencer à l'index 1 pour ignorer le nom du script (sys.argv[0])
+for i in range(1, len(sys.argv)):
+    print(sys.argv[i])
